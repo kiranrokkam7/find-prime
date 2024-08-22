@@ -1,0 +1,168 @@
+/* Root variables for theme colors */
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333333;
+    --container-background: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.15);
+    --input-border: #ddd;
+    --button-background: linear-gradient(135deg, #007adf, #00ecbc);
+    --result-success: #28a745;
+    --result-error: #dc3545;
+    --ad-background: #f8f9fa;
+    --ad-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme variables */
+body.dark {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --container-background: #1e1e1e;
+    --container-shadow: rgba(255, 255, 255, 0.1);
+    --input-border: #555555;
+    --button-background: linear-gradient(135deg, #00ecbc, #007adf);
+    --result-success: #66ff66;
+    --result-error: #ff6666;
+    --ad-background: #292929;
+    --ad-shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    text-align: center;
+    background-color: var(--container-background);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--container-shadow);
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: var(--button-background);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* Ad Section */
+.ad-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+    width: 100%;
+}
+
+.ad-block {
+    background-color: var(--ad-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--ad-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(33.333% - 20px);
+    text-align: center;
+}
+
+.ad-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--ad-shadow);
+}
+
+.ad-block ins {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .ad-block {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .ad-block {
+        width: 100%;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background: #007adf;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background: #005bb5;
+}
